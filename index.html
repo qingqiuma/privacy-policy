@@ -78,13 +78,15 @@
             border-collapse: collapse;
             margin: 12px 0;
             font-size: 14px;
-            table-layout: fixed;
         }
         th, td {
             border: 1px solid #e5e5e5;
             padding: 10px 12px;
             text-align: left;
-            word-break: normal;
+        }
+        /* 最后一列不换行 */
+        th:last-child, td:last-child {
+            white-space: nowrap;
         }
         th {
             background: #f8f9fa;
@@ -155,7 +157,6 @@
                 <h3>1.2 本应用本地存储的信息</h3>
                 <p>以下信息仅存储在您的设备本地，不会上传至任何服务器：</p>
                 <table>
-                    <colgroup><col style="width:25%"><col><col style="width:18%"></colgroup>
                     <tr><th>数据类型</th><th>用途</th><th>存储位置</th></tr>
                     <tr><td>自选股列表</td><td>展示您关注的股票行情</td><td>设备本地</td></tr>
                     <tr><td>补仓计算历史</td><td>方便您查看历史计算记录</td><td>设备本地</td></tr>
@@ -170,7 +171,6 @@
                 <h2>二、网络请求</h2>
                 <p>本应用需要访问互联网以获取以下公开数据：</p>
                 <table>
-                    <colgroup><col style="width:22%"><col><col style="width:35%"></colgroup>
                     <tr><th>数据类型</th><th>数据来源</th><th>用途</th></tr>
                     <tr><td>实时股票行情</td><td>腾讯财经、东方财富（公开 API）</td><td>展示股票价格、涨跌等行情数据</td></tr>
                     <tr><td>财经新闻</td><td>新浪财经、同花顺、雪球、东方财富（公开 API）</td><td>展示财经资讯</td></tr>
@@ -184,7 +184,6 @@
             <div class="section">
                 <h2>三、权限使用说明</h2>
                 <table>
-                    <colgroup><col style="width:28%"><col><col style="width:20%"></colgroup>
                     <tr><th>权限名称</th><th>用途说明</th><th>是否必须</th></tr>
                     <tr><td>网络访问 (INTERNET)</td><td>获取实时股票行情数据和财经新闻资讯</td><td>是</td></tr>
                     <tr><td>生物认证 (ACCESS_BIOMETRIC)</td><td>应用锁功能，保护您的数据隐私安全。仅在您开启应用锁后使用。</td><td>否（可选）</td></tr>
